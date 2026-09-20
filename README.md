@@ -63,6 +63,27 @@ raw documents, participant data, annotations, sealed test gold, embeddings,
 checkpoints, and API responses outside Git. The synthetic JSONL file documents
 the expected interface without reproducing source texts.
 
-This repository is intentionally documentation-light before publication.
-Refer to the associated paper after release for motivation, interpretation,
-and discussion.
+## Manuscript status and citation
+
+This repository accompanies the following manuscript, currently under review
+at iConference 2027 (the 22nd annual conference of the iSchools):
+
+> Yan, X., Peng, J., Wang, J., Lu, C., & Zhang, C. (2027). From natural
+> reading to academic keyphrase extraction: Cross-domain transfer of open
+> eye-tracking signals. *Manuscript submitted to iConference 2027*. Under
+> review.
+
+Authors: Xinyi Yan, Jitong Peng, Jiafeng Wang, Chao Lu, and Chengzhi Zhang\*.
+\* Corresponding author.
+
+```bibtex
+@unpublished{yan2027naturalreading,
+  author    = {Xinyi Yan and Jitong Peng and Jiafeng Wang and Chao Lu and Chengzhi Zhang},
+  title     = {From Natural Reading to Academic Keyphrase Extraction: Cross-Domain Transfer of Open Eye-Tracking Signals},
+  year      = {2027},
+  note      = {Manuscript submitted to iConference 2027; under review}
+}
+```
+
+Please update the citation with the final proceedings metadata if the paper is
+accepted and published.
