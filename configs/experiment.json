@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "experiment": "iconference_llm_fulltext_ake_zeroshot_v1_2",
+  "manual_date": "2026-09-01",
+  "api": {
+    "base_url": "https://openrouter.ai/api/v1/chat/completions",
+    "generation_stats_url": "https://openrouter.ai/api/v1/generation",
+    "timeout_seconds": 300,
+    "max_network_retries": 3,
+    "retry_backoff_seconds": 2.0,
+    "provider": {
+      "order": ["deepinfra"],
+      "allow_fallbacks": false,
+      "require_parameters": true
+    }
+  },
+  "models": {
+    "L70B": {
+      "model_id": "meta-llama/llama-3.3-70b-instruct",
+      "label": "Llama-3.3-70B-Instruct",
+      "context_tokens": 131072,
+      "source_url": "https://openrouter.ai/meta-llama/llama-3.3-70b-instruct"
+    },
+    "Q9B": {
+      "model_id": "qwen/qwen3.5-9b",
+      "label": "Qwen3.5-9B",
+      "context_tokens": 262144,
+      "source_url": "https://openrouter.ai/qwen/qwen3.5-9b"
+    }
+  },
+  "views": ["TA", "FT"],
+  "domains": ["PMC", "LIS", "IEEE"],
+  "conditions": ["L70B-TA", "Q9B-TA", "L70B-FT", "Q9B-FT"],
+  "generation": {
+    "temperature": 0,
+    "top_p": 1,
+    "n": 1,
+    "max_tokens": 512,
+    "stream": false
+  },
+  "parser": {
+    "type": "numbered_list_1_to_10",
+    "minimum_requested": 5,
+    "maximum_parsed": 10,
+    "remove_outer_quotes": true,
+    "non_verbatim_policy": "retain_as_prediction_and_record_violation",
+    "deduplication": "normalize_after_top_k_preserve_first"
+  },
+  "cleaning": {
+    "unicode_normalization": "NFC",
+    "max_document_characters": 300000,
+    "overlength_policy": "section_aware_head_75_tail_25",
+    "excluded_fields": [
+      "kw",
+      "present_kws",
+      "rf",
+      "jn",
+      "subject_metadata",
+      "author_keywords"
+    ],
+    "leakage_headings": [
+      "KEYWORDS",
+      "KEY WORDS",
+      "INDEX TERMS",
+      "AUTHOR KEYWORDS",
+      "REFERENCES",
+      "BIBLIOGRAPHY"
+    ]
+  },
+  "evaluation": {
+    "primary_k": 5,
+    "sensitivity_k": [3, 10],
+    "metric": "dataset_level_micro_precision_recall_f1",
+    "normalization": "NFKC_casefold_strip",
+    "prediction_deduplication": "top_k_then_set",
+    "gold_deduplication": "set",
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 20260901,
+    "bootstrap_unit": "paired_document",
+    "cross_domain": "equal_weight_mean_of_domain_micro_f1"
+  },
+  "governance": {
+    "test_gold_access_before_prediction_freeze": "none",
+    "required_formal_inference_sets": 12,
+    "selective_rerun_for_output_quality": false
+  }
+}
+

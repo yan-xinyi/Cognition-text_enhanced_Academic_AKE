@@ -1,0 +1,34 @@
+schema_version: 1
+data:
+  train_index: data/processed/ake/train_index.jsonl
+  validation_index: data/processed/ake/validation_index.jsonl
+  test_index: data/processed/ake/test_index.jsonl
+model:
+  embedding_dim: 768
+  hidden_size: 128
+  alignment_hidden: 64
+  lstm_layers: 1
+  dropout: 0.2
+  cib_hidden: 32
+  cib_latent_dim: 8
+training:
+  seeds: [42, 52, 62]
+  batch_size: 64
+  epochs: 15
+  early_stopping_patience: 3
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  gradient_clip: 5.0
+  auxiliary_ce_weight: 0.2
+  class_weights: [1.0, 3.0, 3.0]
+  lambda_cog: 0.5
+  lambda_adv: 0.05
+  lambda_gaze: 0.1
+  cib_beta: 0.001
+evaluation:
+  primary_k: 5
+  sensitivity_k: [3, 10]
+  bootstrap_replicates: 10000
+  bootstrap_seed: 20260901
+output_root: outputs/ake
+

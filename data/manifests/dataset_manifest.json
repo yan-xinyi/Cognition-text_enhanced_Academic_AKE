@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "academic_corpus": {
+    "documents": 5316,
+    "domains": {
+      "PMC": {"train": 1035, "validation": 155, "test": 126},
+      "LIS": {"train": 1609, "validation": 189, "test": 202},
+      "IEEE": {"train": 1608, "validation": 187, "test": 205}
+    },
+    "totals": {"train": 4252, "validation": 531, "test": 533},
+    "redistribution": "not_included",
+    "test_gold": "sealed_and_gitignored"
+  },
+  "eye_tracking": {
+    "targets": ["NFIX", "FFD", "GPT", "TRT", "FIXPROP"],
+    "stage_1": "Provo natural-reading adaptation",
+    "stage_2": "CMCL/ZuCo 1.0+2.0 natural-reading fine-tuning",
+    "task_specific_reading_in_primary_predictor": false,
+    "redistribution": "not_included"
+  },
+  "public_examples": "synthetic_only"
+}
+

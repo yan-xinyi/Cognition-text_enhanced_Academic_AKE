@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.env
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Private or licensed data
+data/raw/
+data/processed/
+data/inference/
+data/_sealed_test_gold/
+data/**/*.bin
+data/**/*.npy
+data/**/*.npz
+data/**/*.parquet
+!data/examples/*.jsonl
+
+# Models and run artefacts
+checkpoints/
+outputs/
+*.pt
+*.pth
+*.ckpt
+*.joblib
+wandb/
+runs/
+
+# API outputs and secrets
+raw_responses/
+*.log
+
+# Office/PDF render intermediates
+_qa*/
+rendered/
+*.tmp
+~$*
+

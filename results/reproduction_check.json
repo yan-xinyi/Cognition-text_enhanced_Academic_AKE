@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "checks": {
+    "validation_rows": 4,
+    "test_rows": 5,
+    "minimum_test_proxy_keyphrase_coverage_percent": 99.1649
+  }
+}

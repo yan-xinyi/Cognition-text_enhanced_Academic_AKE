@@ -1,0 +1,26 @@
+schema_version: 1
+model_id: roberta-base
+seed: 42
+data:
+  provo: data/processed/provo.csv
+  cmcl_nr_train: data/processed/cmcl_nr_train.csv
+  cmcl_nr_validation: data/processed/cmcl_nr_validation.csv
+  academic_documents: data/processed/academic_inference.jsonl
+output:
+  checkpoint: checkpoints/proxy_et/roberta_provo_cmcl_nr_seed42.pt
+  scaler: checkpoints/proxy_et/scaler.json
+  academic_proxy: outputs/proxy_et/academic_proxy_et.jsonl
+training:
+  learning_rate: 5.0e-5
+  micro_batch: 4
+  gradient_accumulation: 4
+  stages:
+    - {name: Provo_natural_reading_adaptation, epochs: 100}
+    - {name: CMCL_ZuCo_NR_finetuning, epochs: 150}
+prediction:
+  word_window: 256
+  word_stride: 192
+  batch_size: 4
+  raw_clip: [0.0, 100.0]
+  standardized_clip: [-5.0, 5.0]
+

@@ -1,0 +1,27 @@
+{
+  "archetype": "quantitative grid",
+  "backend": "python",
+  "final_size": "approximately 183 mm wide",
+  "panel_map": {
+    "a": "Observed-to-Proxy complete/partial/zero keyphrase coverage on test",
+    "b": "Absolute Top-5 gold-keyphrase recovery by coverage transition with document-bootstrap 95% confidence intervals",
+    "c": "Recovery difference vs TEXT for phrase types within Proxy-expanded test keyphrases"
+  },
+  "statistics": {
+    "split": "test primary; validation directional replication is supplied separately",
+    "seeds": [
+      42,
+      52,
+      62
+    ],
+    "bootstrap_replicates": 10000,
+    "bootstrap_unit": "document; all three seeds remain clustered within sampled documents",
+    "sparse_rule": "n < 20 is shaded grey and not interpreted",
+    "subgroup_p_values": "not computed"
+  },
+  "source_data": [
+    "figure2a_observed_to_proxy_coverage.csv",
+    "figure2b_recovery_by_transition.csv",
+    "figure2c_proxy_expanded_phrase_type.csv"
+  ]
+}

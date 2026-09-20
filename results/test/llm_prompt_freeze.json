@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN",
+  "frozen_at_utc": "2026-09-01T12:24:29.646530+00:00",
+  "experiment": "iconference_llm_fulltext_ake_zeroshot_v1_2",
+  "model_ids": {
+    "L70B": "meta-llama/llama-3.3-70b-instruct",
+    "Q9B": "qwen/qwen3.5-9b"
+  },
+  "model_generation_overrides": {
+    "L70B": {},
+    "Q9B": {
+      "reasoning": {
+        "enabled": false
+      }
+    }
+  },
+  "provider_route": {
+    "order": [
+      "deepinfra"
+    ],
+    "allow_fallbacks": false,
+    "require_parameters": true
+  },
+  "generation": {
+    "temperature": 0,
+    "top_p": 1,
+    "n": 1,
+    "max_tokens": 512,
+    "stream": false
+  },
+  "parser": {
+    "type": "numbered_list_1_to_10",
+    "minimum_requested": 5,
+    "maximum_parsed": 10,
+    "remove_outer_quotes": true,
+    "non_verbatim_policy": "retain_as_prediction_and_record_violation",
+    "deduplication": "normalize_after_top_k_preserve_first"
+  },
+  "cleaning": {
+    "unicode_normalization": "NFC",
+    "max_document_characters": 300000,
+    "overlength_policy": "section_aware_head_75_tail_25",
+    "excluded_fields": [
+      "kw",
+      "present_kws",
+      "rf",
+      "jn",
+      "subject_metadata",
+      "author_keywords"
+    ],
+    "leakage_headings": [
+      "KEYWORDS",
+      "KEY WORDS",
+      "INDEX TERMS",
+      "AUTHOR KEYWORDS",
+      "REFERENCES",
+      "BIBLIOGRAPHY"
+    ]
+  },
+  "test_gold_access": "none",
+  "smoke_test_combinations": 12,
+  "frozen_files": {
+    "configs/experiment.json": "f88f127fab386900e43ab472b45d5f728961dbee31264a2b5918f5d7713d394b",
+    "prompts/ZEROSHOT_PROMPT_v1.txt": "334d6ac2b4a93f3183a75cf45e0b4d79538806b521092e74fb07aabe4bce4be1",
+    "data/manifests/dataset_manifest.json": "720e7bfee17ba7cbb4292eaea51bf0b0b10859de3a5870dd6dbeb1abeb5e8411",
+    "data/inference/PMC/TA.jsonl": "787dfceed2ce73982c08213bce259f4744faad912bf646bf1b9c993f3a0c6897",
+    "data/inference/PMC/FT.jsonl": "1714c3714f80d76c9e1f7ab755f733f7200d22408698a1441c417ba3139277c0",
+    "data/inference/LIS/TA.jsonl": "d5e808aaefc43079cf295e9dbdad6f79bd05b6cad14a74e05eb7fa384b9d27ad",
+    "data/inference/LIS/FT.jsonl": "635d2219b0670b4426fa0c1f9aa83ab9c46c81731921c91fb243921bed1fbeee",
+    "data/inference/IEEE/TA.jsonl": "abdd70c5851feaa8ea457ff4944c43debf79bee5f76069ccd6b91ef7bd8667f9",
+    "data/inference/IEEE/FT.jsonl": "6ec1f789076b3a64077786abfecad20eead30d7a2260bc13be338e387e88f6ad"
+  }
+}

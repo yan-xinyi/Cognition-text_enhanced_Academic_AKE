@@ -1,0 +1,6 @@
+system,PMC_f1_percent,LIS_f1_percent,IEEE_f1_percent,overall_f1_percent,seeds
+TEXT,35.6997,34.1333,24.2312,30.9813,42/52/62
+CogAlign,36.2125,32.9843,26.0064,31.4070,42/52/62
+ET-ATT,36.9784,34.3903,26.6771,32.0898,42/52/62
+Llama-3.3-70B,23.4714,19.2204,21.2994,21.0763,deterministic
+Qwen3.5-9B,18.9325,12.1704,15.1899,14.9934,deterministic

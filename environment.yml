@@ -1,0 +1,20 @@
+name: cognition-ake-release
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.9
+  - numpy>=1.23
+  - pandas>=1.5
+  - scipy>=1.9
+  - scikit-learn>=1.2
+  - matplotlib>=3.6
+  - pyyaml>=6
+  - requests>=2.31
+  - pytest>=7
+  - pip
+  - pip:
+      - transformers>=4.30,<5
+      - pytorch-crf>=0.7.2
+# Install a PyTorch build compatible with the local NVIDIA driver separately.
+

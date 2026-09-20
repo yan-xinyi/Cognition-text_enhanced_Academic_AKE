@@ -1,0 +1,9 @@
+group,method,text_path,cognitive_path,fusion_or_supervision,task_decoder,cognition_required_at_inference
+No cognition and direct fusion,TEXT,SciBERT embeddings -> BiLSTM,None,None,Linear emissions -> CRF,No
+No cognition and direct fusion,DC,SciBERT embeddings -> BiLSTM,5D Proxy ET + feature masks + validity -> MLP projection,Late concatenation of text hidden state and projected cognitive vector,Linear emissions -> CRF,Yes
+Cognitive transformation and supervision,GIB,SciBERT embeddings -> BiLSTM,Each ET dimension -> feature embedding; document-wise entropy weighting,Residual injection of weighted gaze embedding into text hidden state,Linear emissions -> CRF,Yes
+Cognitive transformation and supervision,GAZESUP,SciBERT embeddings -> BiLSTM,Text hidden state -> five-dimensional gaze-prediction head,Auxiliary masked gaze-reconstruction loss during training,Linear emissions -> CRF,No
+Cognitive transformation and supervision,CIB,SciBERT embeddings,5D Proxy ET -> variational encoder -> latent cognitive vector,Early concatenation of text embedding and bottleneck latent before BiLSTM,Linear emissions -> CRF with KL regularisation,Yes
+Task-aware organisation,CA,SciBERT embeddings -> text backbone -> private/shared text encoders,Text-conditioned ET-dimension weighting -> projection -> private/shared cognitive encoders,Shared-representation alignment with cognitive task branch and adversarial modality discriminator,Text emissions -> CRF,No
+Task-aware organisation,FS-CA,SciBERT embeddings -> text backbone -> private/shared text encoders,Global learnable five-feature gate -> text-conditioned weighting -> cognitive encoders,Feature selection before CogAlign shared/private alignment,Text emissions -> CRF,No
+Task-aware organisation,ET-ATT,SciBERT embeddings,Masked 5D Proxy ET,Early token-level concatenation -> BiLSTM -> AKE-supervised sequence attention -> local/global concatenation,Linear emissions -> CRF,Yes

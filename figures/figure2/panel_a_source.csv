@@ -1,0 +1,19 @@
+﻿domain,coverage_source,coverage_level,n_gold_occurrences,domain_total,percentage
+PMC,Observed ET,Zero,339,384,88.28125
+PMC,Observed ET,Partial,30,384,7.8125
+PMC,Observed ET,Full,15,384,3.90625
+PMC,Proxy ET,Zero,0,384,0.0
+PMC,Proxy ET,Partial,3,384,0.78125
+PMC,Proxy ET,Full,381,384,99.21875
+LIS,Observed ET,Zero,357,479,74.53027139874739
+LIS,Observed ET,Partial,100,479,20.876826722338205
+LIS,Observed ET,Full,22,479,4.592901878914405
+LIS,Proxy ET,Zero,0,479,0.0
+LIS,Proxy ET,Partial,4,479,0.8350730688935282
+LIS,Proxy ET,Full,475,479,99.16492693110648
+IEEE,Observed ET,Zero,402,469,85.71428571428571
+IEEE,Observed ET,Partial,65,469,13.859275053304904
+IEEE,Observed ET,Full,2,469,0.42643923240938164
+IEEE,Proxy ET,Zero,0,469,0.0
+IEEE,Proxy ET,Partial,0,469,0.0
+IEEE,Proxy ET,Full,469,469,100.0

@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cognition-text-enhanced-academic-ake"
+version = "0.1.0"
+description = "Proxy eye-tracking prediction and cognition-text fusion for academic keyphrase extraction"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{name = "Xinyi Yan"}]
+dependencies = [
+  "numpy>=1.23,<3",
+  "pandas>=1.5,<3",
+  "PyYAML>=6,<7",
+  "scipy>=1.9,<2",
+  "scikit-learn>=1.2,<2",
+  "matplotlib>=3.6,<4",
+  "requests>=2.31,<3",
+]
+
+[project.optional-dependencies]
+model = [
+  "torch>=1.13",
+  "transformers>=4.30,<5",
+  "pytorch-crf>=0.7.2",
+]
+dev = ["pytest>=7,<9"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Academic AKE document",
+  "type": "object",
+  "required": ["doc_id", "domain", "split", "visible_tokens"],
+  "properties": {
+    "doc_id": {"type": "string"},
+    "domain": {"enum": ["PMC", "LIS", "IEEE"]},
+    "split": {"enum": ["train", "validation", "test"]},
+    "view": {"enum": ["TA", "FT"]},
+    "visible_tokens": {"type": "array", "items": {"type": "string"}},
+    "labels": {"type": "array", "items": {"enum": ["O", "B", "I"]}},
+    "gold_present": {"type": "array", "items": {"type": "string"}},
+    "proxy_et": {
+      "type": "array",
+      "items": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "number"}}
+    },
+    "proxy_mask": {
+      "type": "array",
+      "items": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"enum": [0, 1]}}
+    },
+    "proxy_valid": {"type": "array", "items": {"enum": [0, 1]}}
+  }
+}
+

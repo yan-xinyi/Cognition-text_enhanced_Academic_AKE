@@ -1,0 +1,23 @@
+﻿domain,coverage_transition,system,delta_vs_text_pp_test,delta_vs_text_pp_validation,n_gold_occurrences_test,n_gold_occurrences_validation,direction_consistent,eligible_both_splits
+IEEE,Directly covered,CogAlign,-16.666666666666668,33.333333333333336,2,1,0,0
+IEEE,Directly covered,ET-ATT,-16.666666666666668,66.66666666666667,2,1,0,0
+IEEE,Proxy-completed from partial,CogAlign,6.153846153846154,5.128205128205129,65,65,1,1
+IEEE,Proxy-completed from partial,ET-ATT,4.615384615384615,2.051282051282051,65,65,1,1
+IEEE,Proxy-completed from zero,CogAlign,5.555555555555555,7.811080835603996,402,367,1,1
+IEEE,Proxy-completed from zero,ET-ATT,6.7164179104477615,8.356039963669392,402,367,1,1
+LIS,Directly covered,CogAlign,6.0606060606060606,11.904761904761905,22,14,1,0
+LIS,Directly covered,ET-ATT,1.5151515151515151,-2.380952380952381,22,14,0,0
+LIS,Proxy-completed from partial,CogAlign,10.0,10.045662100456621,100,73,1,1
+LIS,Proxy-completed from partial,ET-ATT,5.0,0.45662100456621,100,73,1,1
+LIS,Proxy-completed from zero,CogAlign,6.232294617563739,10.571184995737426,353,391,1,1
+LIS,Proxy-completed from zero,ET-ATT,0.3777148253068933,1.5345268542199488,353,391,1,1
+LIS,Proxy-incomplete,CogAlign,0.0,0.0,4,1,1,0
+LIS,Proxy-incomplete,ET-ATT,-16.666666666666668,-33.333333333333336,4,1,1,0
+PMC,Directly covered,CogAlign,4.444444444444445,10.256410256410257,15,13,1,0
+PMC,Directly covered,ET-ATT,2.2222222222222223,5.128205128205129,15,13,1,0
+PMC,Proxy-completed from partial,CogAlign,5.555555555555555,5.8201058201058204,30,63,1,1
+PMC,Proxy-completed from partial,ET-ATT,-4.444444444444445,4.232804232804233,30,63,0,1
+PMC,Proxy-completed from zero,CogAlign,6.5476190476190474,7.648953301127214,336,414,1,1
+PMC,Proxy-completed from zero,ET-ATT,3.2738095238095237,5.072463768115942,336,414,1,1
+PMC,Proxy-incomplete,CogAlign,-11.11111111111111,13.333333333333334,3,5,0,0
+PMC,Proxy-incomplete,ET-ATT,0.0,13.333333333333334,3,5,0,0
