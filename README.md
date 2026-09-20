@@ -85,5 +85,5 @@ Authors: Xinyi Yan, Jitong Peng, Jiafeng Wang, Chao Lu, and Chengzhi Zhang\*.
 }
 ```
 
-Please update the citation with the final proceedings metadata if the paper is
-accepted and published.
+If the paper is accepted, this citation will be updated with the final
+proceedings metadata.
